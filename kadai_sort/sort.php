@@ -11,19 +11,25 @@
         <?php
         //$order = true;
         $data = [15, 4, 18, 23, 10];
-        sort($data);
-        echo "昇順にソートします。<br/>";
 
-        foreach ($data as $value){
-        echo $value. '<br/>';
-        }
-
-        rsort($data);
-        echo "降順にソートします。<br/>";
-        foreach($data as $value){
+        function sort_2way($ans, $data) {
         
-        echo $value. '<br/>';
+        if ($ans){
+            echo "昇順にソートします。<br/>";
+            sort($data);
+        } else {
+            
+            echo "降順にソートします。<br/>";
+            rsort($data);
+        }    foreach($data as $value){
+        
+            echo $value. '<br/>';
         }
+            }
+        
+
+        sort_2way(true,$data);
+        sort_2way(false,$data);
         ?>
         
 
